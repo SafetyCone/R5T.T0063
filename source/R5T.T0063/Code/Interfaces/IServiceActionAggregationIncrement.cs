@@ -4,7 +4,7 @@
 namespace R5T.T0063
 {
     /// <summary>
-    /// An empty marker interface that can be implemented by a type to communicate that that type is a service action aggregation increment.
+    /// Empty marker interface that when implemented by a type (usually an interface) communicates that that type is a service action aggregation increment.
     /// </summary>
     public interface IServiceActionAggregationIncrement
     {

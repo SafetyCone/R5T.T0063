@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -44,6 +45,17 @@ namespace System
         public static IServiceCollection Run<TService>(this IServiceCollection services, IServiceAction<TService> serviceAction)
         {
             services.RunServiceAction(serviceAction);
+
+            return services;
+        }
+
+        public static IServiceCollection Run<TService>(this IServiceCollection services,
+            IEnumerable<IServiceAction<TService>> serviceActions)
+        {
+            foreach (var serviceAction in serviceActions)
+            {
+                services.RunServiceAction(serviceAction);
+            }
 
             return services;
         }
