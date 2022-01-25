@@ -14,6 +14,16 @@ namespace System
     public static class IServiceCollectionExtensions
     {
         /// <summary>
+        /// Does nothing, just marks a statement as the service collection configuration statement, since there is no <see cref="AttributeTargets"/> value for statements, so an attribute cannot be used.
+        /// </summary>
+        public static IServiceCollection MarkAsServiceCollectonConfigurationStatement(this IServiceCollection services)
+        {
+            // Do nothing.
+
+            return services;
+        }
+
+        /// <summary>
         /// Runs the provided service action, then builds a service provider and gets an instance of the requested service.
         /// </summary>
         public static ServiceProvider GetInstance<TService>(this IServiceCollection services,
